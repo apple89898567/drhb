@@ -1,0 +1,155 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0028)http://203.195.235.76/jssdk/ -->
+<!DOCTYPE html><HTML><HEAD>
+<META charset="utf-8"><TITLE>微信JS-SDK Demo</TITLE>
+<META name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><LINK 
+rel="stylesheet" href="style.css">
+<META name="GENERATOR" content="MSHTML 9.00.8112.16717"></HEAD>
+<BODY ontouchstart="">
+<DIV class="wxapi_container">
+<DIV class="wxapi_index_container">
+<UL class="label_box lbox_close wxapi_index_list">
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-basic">基础接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-share">分享接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-image">图像接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-voice">音频接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-smart">智能接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-device">设备信息接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-location">地理位置接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-webview">界面操作接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-scan">微信扫一扫接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-shopping">微信小店接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-card">微信卡券接口</A></LI>
+  <LI class="label_item wxapi_index_item"><A class="label_inner" href="http://203.195.235.76/jssdk/#menu-pay">微信支付接口</A></LI></UL></DIV>
+<DIV class="lbox_close wxapi_form">
+<H3 id="menu-basic">基础接口</H3><SPAN class="desc">判断当前客户端是否支持指定JS接口</SPAN><BUTTON 
+id="checkJsApi" class="btn btn_primary">checkJsApi</BUTTON>
+<H3 id="menu-share">分享接口</H3><SPAN 
+class="desc">获取“分享到朋友圈”按钮点击状态及自定义分享内容接口</SPAN><BUTTON id="onMenuShareTimeline" 
+class="btn btn_primary">onMenuShareTimeline</BUTTON><SPAN 
+class="desc">获取“分享给朋友”按钮点击状态及自定义分享内容接口</SPAN><BUTTON id="onMenuShareAppMessage" 
+class="btn btn_primary">onMenuShareAppMessage</BUTTON><SPAN 
+class="desc">获取“分享到QQ”按钮点击状态及自定义分享内容接口</SPAN><BUTTON id="onMenuShareQQ" class="btn btn_primary">onMenuShareQQ</BUTTON><SPAN 
+class="desc">获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口</SPAN><BUTTON id="onMenuShareWeibo" 
+class="btn btn_primary">onMenuShareWeibo</BUTTON><SPAN 
+class="desc">获取“分享到QZone”按钮点击状态及自定义分享内容接口</SPAN><BUTTON id="onMenuShareQZone" 
+class="btn btn_primary">onMenuShareQZone</BUTTON>
+<H3 id="menu-image">图像接口</H3><SPAN class="desc">拍照或从手机相册中选图接口</SPAN><BUTTON id="chooseImage" 
+class="btn btn_primary">chooseImage</BUTTON><SPAN 
+class="desc">预览图片接口</SPAN><BUTTON id="previewImage" 
+class="btn btn_primary">previewImage</BUTTON><SPAN 
+class="desc">上传图片接口</SPAN><BUTTON id="uploadImage" 
+class="btn btn_primary">uploadImage</BUTTON><SPAN 
+class="desc">下载图片接口</SPAN><BUTTON id="downloadImage" 
+class="btn btn_primary">downloadImage</BUTTON>
+<H3 id="menu-voice">音频接口</H3><SPAN class="desc">开始录音接口</SPAN><BUTTON id="startRecord" 
+class="btn btn_primary">startRecord</BUTTON><SPAN 
+class="desc">停止录音接口</SPAN><BUTTON id="stopRecord" 
+class="btn btn_primary">stopRecord</BUTTON><SPAN 
+class="desc">播放语音接口</SPAN><BUTTON id="playVoice" 
+class="btn btn_primary">playVoice</BUTTON><SPAN 
+class="desc">暂停播放接口</SPAN><BUTTON id="pauseVoice" 
+class="btn btn_primary">pauseVoice</BUTTON><SPAN 
+class="desc">停止播放接口</SPAN><BUTTON id="stopVoice" 
+class="btn btn_primary">stopVoice</BUTTON><SPAN 
+class="desc">上传语音接口</SPAN><BUTTON id="uploadVoice" 
+class="btn btn_primary">uploadVoice</BUTTON><SPAN 
+class="desc">下载语音接口</SPAN><BUTTON id="downloadVoice" 
+class="btn btn_primary">downloadVoice</BUTTON>
+<H3 id="menu-smart">智能接口</H3><SPAN class="desc">识别音频并返回识别结果接口</SPAN><BUTTON id="translateVoice" 
+class="btn btn_primary">translateVoice</BUTTON>
+<H3 id="menu-device">设备信息接口</H3><SPAN class="desc">获取网络状态接口</SPAN><BUTTON id="getNetworkType" 
+class="btn btn_primary">getNetworkType</BUTTON>
+<H3 id="menu-location">地理位置接口</H3><SPAN 
+class="desc">使用微信内置地图查看位置接口</SPAN><BUTTON id="openLocation" class="btn btn_primary">openLocation</BUTTON><SPAN 
+class="desc">获取地理位置接口</SPAN><BUTTON id="getLocation" 
+class="btn btn_primary">getLocation</BUTTON>
+<H3 id="menu-webview">界面操作接口</H3><SPAN class="desc">隐藏右上角菜单接口</SPAN><BUTTON id="hideOptionMenu" 
+class="btn btn_primary">hideOptionMenu</BUTTON><SPAN 
+class="desc">显示右上角菜单接口</SPAN><BUTTON id="showOptionMenu" 
+class="btn btn_primary">showOptionMenu</BUTTON><SPAN 
+class="desc">关闭当前网页窗口接口</SPAN><BUTTON id="closeWindow" 
+class="btn btn_primary">closeWindow</BUTTON><SPAN 
+class="desc">批量隐藏功能按钮接口</SPAN><BUTTON id="hideMenuItems" 
+class="btn btn_primary">hideMenuItems</BUTTON><SPAN 
+class="desc">批量显示功能按钮接口</SPAN><BUTTON id="showMenuItems" 
+class="btn btn_primary">showMenuItems</BUTTON><SPAN 
+class="desc">隐藏所有非基础按钮接口</SPAN><BUTTON id="hideAllNonBaseMenuItem" class="btn btn_primary">hideAllNonBaseMenuItem</BUTTON><SPAN 
+class="desc">显示所有功能按钮接口</SPAN><BUTTON id="showAllNonBaseMenuItem" class="btn btn_primary">showAllNonBaseMenuItem</BUTTON>
+<H3 id="menu-scan">微信扫一扫</H3><SPAN class="desc">调起微信扫一扫接口</SPAN><BUTTON id="scanQRCode0" 
+class="btn btn_primary">scanQRCode(微信处理结果)</BUTTON><BUTTON id="scanQRCode1" 
+class="btn btn_primary">scanQRCode(直接返回结果)</BUTTON>
+<H3 id="menu-shopping">微信小店接口</H3><SPAN class="desc">跳转微信商品页接口</SPAN><BUTTON id="openProductSpecificView" 
+class="btn btn_primary">openProductSpecificView</BUTTON>
+<H3 id="menu-card">微信卡券接口</H3><SPAN class="desc">批量添加卡券接口</SPAN><BUTTON id="addCard" 
+class="btn btn_primary">addCard</BUTTON><SPAN 
+class="desc">调起适用于门店的卡券列表并获取用户选择列表</SPAN><BUTTON id="chooseCard" class="btn btn_primary">chooseCard</BUTTON><SPAN 
+class="desc">查看微信卡包中的卡券接口</SPAN><BUTTON id="openCard" 
+class="btn btn_primary">openCard</BUTTON>
+<H3 id="menu-pay">微信支付接口</H3><SPAN class="desc">发起一个微信支付请求</SPAN><BUTTON id="chooseWXPay" 
+class="btn btn_primary">chooseWXPay</BUTTON></DIV></DIV>
+<SCRIPT src="jweixin-1.0.0.js"></SCRIPT>
+
+<SCRIPT>
+  /*
+   * 注意：
+   * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+   * 2. 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+   * 3. 常见问题及完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
+   *
+   * 开发中遇到问题详见文档“附录5-常见错误及解决办法”解决，如仍未能解决可通过以下渠道反馈：
+   * 邮箱地址：weixin-open@qq.com
+   * 邮件主题：【微信JS-SDK反馈】具体问题
+   * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
+   */
+  wx.config({
+      debug: false,
+      appId: 'wxf8b4f85f3a794e77',
+      timestamp: 1522831555,
+      nonceStr: 'achgTql9dcWk6nD7',
+      signature: '304880c308957657781bbd0b37ce44366ec15e68',
+      jsApiList: [
+        'checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+        'onMenuShareQQ',
+        'onMenuShareWeibo',
+        'onMenuShareQZone',
+        'hideMenuItems',
+        'showMenuItems',
+        'hideAllNonBaseMenuItem',
+        'showAllNonBaseMenuItem',
+        'translateVoice',
+        'startRecord',
+        'stopRecord',
+        'onVoiceRecordEnd',
+        'playVoice',
+        'onVoicePlayEnd',
+        'pauseVoice',
+        'stopVoice',
+        'uploadVoice',
+        'downloadVoice',
+        'chooseImage',
+        'previewImage',
+        'uploadImage',
+        'downloadImage',
+        'getNetworkType',
+        'openLocation',
+        'getLocation',
+        'hideOptionMenu',
+        'showOptionMenu',
+        'closeWindow',
+        'scanQRCode',
+        'chooseWXPay',
+        'openProductSpecificView',
+        'addCard',
+        'chooseCard',
+        'openCard'
+      ]
+  });
+</SCRIPT>
+
+<SCRIPT src="zepto.min.js"></SCRIPT>
+
+<SCRIPT src="demo.js"> </SCRIPT>
+</BODY></HTML>
