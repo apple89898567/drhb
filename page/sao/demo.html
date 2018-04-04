@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ontouchstart="">
+<div class="wxapi_container">
+    <div class="lbox_close wxapi_form">
+      <button class="btn btn_primary" id="scanQRCode0">扫一扫</button>
+    </div>
+  </div>
+
+<script src="jweixin-1.js"></script>
+<script>
+  wx.config({
+      debug: false,
+      appId: 'wxf8b4f85f3a794e77',
+      timestamp: 1522827321,
+      nonceStr: 'KqlSaigK4YynlLZj',
+      signature: '1cc99eecd996922f56fd2cc8c32b264eb81abf78',
+      jsApiList: [
+        'checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+        'onMenuShareQQ',
+        'onMenuShareWeibo',
+        'onMenuShareQZone',
+        'hideMenuItems',
+        'showMenuItems',
+        'hideAllNonBaseMenuItem',
+        'showAllNonBaseMenuItem',
+        'translateVoice',
+        'startRecord',
+        'stopRecord',
+        'onVoiceRecordEnd',
+        'playVoice',
+        'onVoicePlayEnd',
+        'pauseVoice',
+        'stopVoice',
+        'uploadVoice',
+        'downloadVoice',
+        'chooseImage',
+        'previewImage',
+        'uploadImage',
+        'downloadImage',
+        'getNetworkType',
+        'openLocation',
+        'getLocation',
+        'hideOptionMenu',
+        'showOptionMenu',
+        'closeWindow',
+        'scanQRCode',
+        'chooseWXPay',
+        'openProductSpecificView',
+        'addCard',
+        'chooseCard',
+        'openCard'
+      ]
+  });
+</script>
+<script src="zepto.js"></script>
+<script src="demo.js"> </script>
+
+</body></html>
