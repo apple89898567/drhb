@@ -1,32 +1,12 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <title>选项卡111</title>  
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-	/*动态调整iframe的大小*/  
-   function changeIframeSize(iframeContentHeight){  
-      document.getElementById('rightContent').height = iframeContentHeight+20;  
-   }  
-   /*iframe页面载入处理函数*/  
-   function iframeOnload()  
-   {  
-       var frms=document.getElementById('rightContent');  
-       /*判断浏览器类型*/  
-        var height=($.browser.msie||$.browser.opera)? frms.document.body.scrollHeight:frms.contentDocument.body.offsetHeight;  
-        changeIframeSize(height);  
-        /*this.height=rightContent.document.body.scrollHeight*/  
-   } 
-       var height=($.browser.msie||$.browser.opera)? document.body.scrollHeight:document.body.offsetHeight;/*判断浏览器类型*/  
-    parent.changeIframeSize(height);/*调用父页面内的js函数，调整iframe的大小*/  
-	</script>
-</head>  
-<body>
-    <div id="right" >  
-        <iframe width="100%" frameBorder="0" frameSpacing="0" scrolling="auto" marginHeight="0" marginWidth="0" name="rightContent" src="http://i.tianqi.com/index.php?c=code&id=48" id="rightContent" onload="iframeOnload()" ></iframe>  
-        </div>  
-        
-        
-</body> 
-</html>  
+    <!DOCTYPE html>  
+    <html>  
+    <head>  
+  
+    <meta charset="utf-8">  
+    <title>天气预报</title>  
+ 
+    </head>  
+    <body>  
+<iframe id="fancybox-frame" name="fancybox-frame1523072468404" frameborder="0" scrolling="no" hspace="0"  src="http://i.tianqi.com/index.php?c=code&a=getcode&id=42&h=54&w=214"></iframe>
+  </body>  
+    </html>  
