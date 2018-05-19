@@ -1,84 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-<style type="text/css">
-	div.nav {
-    width:75px;
-    z-index:9999;position: relative;	
-}
-.nav ul {
-    width:75px;
-    overflow:hidden;
-}
-.nav ul li {
-    width:75px;
-    float:left;
-    list-style:none;
-    border-bottom:1px solid #FFF;
-}
-.nav ul li ul {
-    display:none;
-}
-a {
-    color: #FFFFFF;
-    display:inline-block;
-    line-height:30px;
-    height:30px;
-    width:75px;
-    background:#FCFCFC;
-    text-decoration:none;
-    text-align:center;
-    font-size:10px;
-}
-.nav ul li:hover ul {
-    display:block;
-    margin-left:0px;
-    padding-left:0px;
-}
-.nav ul li:hover a{
-    background-color:#F8F8FF;
-}
-.nav ul li:hover ul li {
-    list-style:none;
-    float:none;
-    /*text-align:center;*/
-     border-bottom:1px solid #FFF;
-}
-.nav ul li:hover ul li a {
-    color: #FFFFFF;
-    display:inline-block;
-    height:30px;
-    width:75px;
-    background:#778899;
-    text-decoration:none;
-    text-align:left;
-    font-size:10px;
-}
-.nav ul li:hover ul li:hover a {
-    background-color:aqua;
-}
-	</style>
+<html><head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+	    <title></title>
+	      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+body ,div,ul, li{margin:0; padding:0;font-style: normal;font:12px/22px "\5B8B\4F53"}
+.imglist{   
+     margin:0 auto;   
+   
+ }
 
-</head>
-<body>
+ .List__double-flow-wrap__8amgx_0{
+     height:500;
+ }
 
-<div id="nav" class="nav">
-    <ul style="padding-left: 1px;margin-top: 1px;margin-bottom: 1px;">
-        <li><a href="#"><img src="https://pic.kuaizhan.com/g3/2c/cb/c3de-c6ce-428b-9d75-4440c78d3b4534/imageView/v1/thumbnail/240x180" width="20" height="20" border="0" /></a>
-            <ul>
-                <li>
-                	<a href="#"><img  style="vertical-align:middle;margin-left:3px;margin-right:10px;" src="https://pic.kuaizhan.com/g3/5a/5f/cbee-bd78-400b-9b88-09897ee0abbb61/imageView/v1/thumbnail/240x180" width="20" height="20" border="0" />扫一扫</a>
-                	</li>
-                <li><a href="https://yujiandandong.kuaizhan.com/79/0/p512683593e17ba"><img style="margin-left:3px;vertical-align:middle;margin-right:10px;" src="https://pic.kuaizhan.com/g3/e2/b6/843f-222d-4273-8d82-42aac904e73169/imageView/v1/thumbnail/240x180" width="20" height="20" border="0" />优惠券</a></li>
-                <li><a href="https://yujiandandong.kuaizhan.com/79/0/p512683593e17ba"><img  
-                	style="margin-left:3px;vertical-align:middle;margin-right:10px;" src="https://pic.kuaizhan.com/g3/d8/d9/9505-3716-4c81-8a96-57990772cdf593/imageView/v1/thumbnail/240x180" width="20" height="20" border="0" />商户举报</a></li>
-                <li><a href="https://yujiandandong.kuaizhan.com/79/0/p512683593e17ba"><img 
-                	style="margin-left:1px;vertical-align:middle;margin-right:4px;" src="https://pic.kuaizhan.com/g3/b0/c7/8e10-aa81-42eb-ac16-bac1a076171581/imageView/v1/thumbnail/240x180" width="20" height="20" border="0" />帮助与反馈</a></li>
-            </ul>
-        </li>
-    </ul>
+</style>
+<script>
+$(document).ready(function(){
+var username=$("#username").val();
+
+$("#username").val("");
+
+var iframe = document.getElementById('myname') ;
+iframe.style = "display:none";
+});
+</script>
+ <script type="text/javascript">
+function login() {
+alert("1234567");
+	 var username=$("#username").val();
+
+	 if(username=='') {
+		  alert("您输入为空");
+		  return ;
+	 }else if(username=='250025') {
+	alert("123456");
+
+  $(".imglist").css("display", "none");  
+var iframee = document.getElementById('myname') ;
+iframee.style = "display:block";
+
+
+	 }else{
+	 	 alert("错误");
+	
+	}
+	 	
+	 	
+
+
+	  
+	}
+
+
+
+</script>
+</head>  
+<body>  
+	<div class="imglist">
+ <table id="newlang" width="100%" class="tab" align="center" cellspacing="1" cellpadding="5">
+                    <tr align="center">
+                     <td align="center"><input type="text" name="user.username" class="input" id="username"></td>
+                    </tr> 
+                   
+                    <tr align="center">
+                   <td align="center"><button onclick="login()">投票</button></td>
+                    </tr>
+                  </table> 
 </div>
-</body>
+
+
+<iframe style="display:none" id="myname" name="weather_inc" src="https://yujiandandong.kuaizhan.com/2/33/p526378878aeafe" width="1000" height="2800" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</body>  
 </html>
