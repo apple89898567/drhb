@@ -20,7 +20,7 @@ body ,div,ul, li{margin:0; padding:0;font-style: normal;font:12px/22px "\5B8B\4F
 .window-panel h3 { font-size: 16px; margin: 0; }
 .window-panel .close-btn { display: block; text-align: center; vertical-align: middle; position: absolute; width: 36px; height: 36px; line-height: 36px; right: 0px; text-decoration: none; font-size: 24px; color: black; background-color: #DBDBDB; border-radius: 2px; z-index: 1; }
 .window-panel .close-btn:hover { background-color: #ccc; }
-.window-panel .body-panel { position: absolute; width: 100%; top: 36px; border-radius: 0 0 4px 4px; z-index: 1;background: #fff;background-image: url(../images/wenli.png); }
+.window-panel .body-panel { position: absolute; width: 100%; top: 36px; border-radius: 0 0 4px 4px; z-index: 1;background: #fff;background-image: url(https://pic.kuaizhan.com/g3/54/51/7d74-0b37-4e1e-883d-f70af7889b4c18/imageView/v1/thumbnail/240x180); }
 .window-panel .body-panel.toast-panel{ position: absolute;color:#fff;background:rgba(0,0,0,0.3); }
 .window-panel .content, .window-panel .btns { text-align: center; }
 .window-panel .content { padding: 10px 10px 0px 10px; font-size: 16px; min-height: 40px; line-height: 22px; }
@@ -202,7 +202,7 @@ var mizhu = new function() {
 	this.alert = function(title, message, ico) {
 		var icon = "";
 		if(!valempty(ico)) {
-			icon = '<p class="btns" style="margin-bottom:-15px;"><img width="70px" height="70px" src="images/' + ico + '.png"></p>';
+			icon = '<p class="btns" style="margin-bottom:-15px;"><img width="70px" height="70px" src="https://pic.kuaizhan.com/g3/37/30/684c-8944-4b82-9e8b-09954188dc5099/imageView/v1/thumbnail/240x180"></p>';
 		}
 		var html = '<div class="win"><div class="mask-layer"></div><div class="window-panel"><iframe class="title-panel" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe><div class="title"><h3></h3></div><div class="body-panel">' + icon + '<p class="content"></p><p class="btns"><button class="w-btn" tabindex="1" onclick="mizhu.close();">确定</button></p></div></div></div>';
 		messageBox(html, title, message);
