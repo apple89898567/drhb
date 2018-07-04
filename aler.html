@@ -17,7 +17,7 @@ body ,div,ul, li{margin:0; padding:0;font-style: normal;font:12px/22px "\5B8B\4F
 .window-panel { position: fixed; z-index: 99999; top: 50%; left: 50%; background-color: white; border-radius: 4px; }
 .window-panel .title-panel { position: absolute; height: 36px; width: 100%; border-radius: 4px 4px 0 0; }
 .window-panel .title { position: absolute; height: 36px; width: 100%; text-align: center; border-radius: 4px 4px 0 0; line-height: 36px; vertical-align: middle; background-color: whitesmoke; /*标题背景色*/ border-bottom: 1px solid rgb(233, 233, 233); z-index: 1; }
-.window-panel h3 { font-size: 16px;margin-top: 3px; }
+.window-panel h3 { font-size: 16px;margin-top: 8px; }
 .window-panel .close-btn { display: block; text-align: center; vertical-align: middle; position: absolute; width: 36px; height: 36px; line-height: 36px; right: 0px; text-decoration: none; font-size: 24px; color: black; background-color: #DBDBDB; border-radius: 2px; z-index: 1; }
 .window-panel .close-btn:hover { background-color: #ccc; }
 .window-panel .body-panel { position: absolute; width: 100%; top: 36px; border-radius: 0 0 4px 4px; z-index: 1;background: #fff; }
@@ -113,9 +113,13 @@ if (arr[f1]==username) {
 	  if(myflag=='1') {
 	
   
+      alert("hello \n world!");     
+
+      alert("Hello \r\n Javascript!"); 
+
+      alert("\t这句话应\t\n"); 
    
-   
-   mizhu.alert('消费证明', "您的卡号为"+username+"  您的卡片已激活、可正常使用，消费时请出示本页面已证明");
+   mizhu.alert('消费证明', "您的卡号为"+username+" \r\n  您的卡片已激活、可正常使用"+" \r\n 消费时请出示本页面已证明");
    
    
    
