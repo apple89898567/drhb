@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html><head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+	    <title></title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
+<style>
+body ,div,ul, li{margin:0; padding:0;font-style: normal;font:12px/22px "\5B8B\4F53"}
+.imglist{   
+     margin:0 auto;   
+   
+ }
+
+.win { display: none; }
+.mask-layer { position: fixed; width: 100%; height: 100%; opacity: 0.5; filter: alpha(opacity=50); background-color: black; z-index: 99998; top: 0px; left: 0px; }
+.window-panel { position: fixed; z-index: 99999; top: 50%; left: 50%; background-color: white; border-radius: 4px; }
+.window-panel .title-panel { position: absolute; height: 36px; width: 100%; border-radius: 4px 4px 0 0; }
+.window-panel .title { position: absolute; height: 36px; width: 100%; text-align: center; border-radius: 4px 4px 0 0; line-height: 36px; vertical-align: middle; background-color: whitesmoke; /*标题背景色*/ border-bottom: 1px solid rgb(233, 233, 233); z-index: 1; }
+.window-panel h3 { font-size: 16px; margin: 0; }
+.window-panel .close-btn { display: block; text-align: center; vertical-align: middle; position: absolute; width: 36px; height: 36px; line-height: 36px; right: 0px; text-decoration: none; font-size: 24px; color: black; background-color: #DBDBDB; border-radius: 2px; z-index: 1; }
+.window-panel .close-btn:hover { background-color: #ccc; }
+.window-panel .body-panel { position: absolute; width: 100%; top: 36px; border-radius: 0 0 4px 4px; z-index: 1;background: #fff;background-image: url(../images/wenli.png); }
+.window-panel .body-panel.toast-panel{ position: absolute;color:#fff;background:rgba(0,0,0,0.3); }
+.window-panel .content, .window-panel .btns { text-align: center; }
+.window-panel .content { padding: 10px 10px 0px 10px; font-size: 16px; min-height: 40px; line-height: 22px; }
+.window-panel .content.toast-content{padding:0;min-height:0;}
+.window-panel .w-btn { display: inline-block; width: 60px; height: 26px; line-height: 26px; background-color: #DE5923; color: white; cursor: pointer; text-align: center; border-radius: 2px; text-decoration: none; margin: 0 10px 0px 10px; border: none; }
+.window-panel .w-btn:hover { background-color: #DA3E00; }
+.window-panel .w-btn:focus { outline: 0 none; }
+
+
+
+input{
+ 
+  text-align:center;
+  font-size:1.4em;
+  height:2.5em;
+  border-radius:4px;
+  border:1px solid #c8cccf;
+  color:#6a6f77;
+  -web-kit-appearance:none;
+  -moz-appearance: none;
+  outline:0;
+  padding:0 1em;
+  text-decoration:none;
+  width:80%;
+}
+
+			.alert {
+				width: 30%;
+				text-align: center;
+				color: #fff;
+				margin: 10px auto;
+				border-radius: 5px;
+				line-height: 30px;
+				cursor: pointer;
+				background: #4ab819;
+			}
+			
+
+
+		</style>
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+var username=$("#username").val();
+var phone=$("#phone").val();
+$("#username").val("");
+$("#phone").val("");
+
+});
+</script>
+ <script type="text/javascript">
+ 
+ 
+function login() {
+var arr = ["250025", "123456", "567890"];
+var myflag="0";
+var phone=$("#phone").val();
+var username=$("#username").val();
+	 
+	
+	 if(username=='' || phone=='') {
+
+	 	mizhu.alert('', '您卡号或电话输入为空','alert_green');
+
+		  return ;
+	 }
+	 
+	 
+
+	 	 if(phone.length!=11) {
+	 	mizhu.alert('', '您电话输入有误','alert_green');
+		  return ;
+	 }
+	 
+
+
+for (var f1 in arr) {
+if (arr[f1]==username) {
+      myflag="1";
+      break;
+}
+}
+
+	 
+	  if(myflag=='1') {
+	
+  
+   
+   
+   mizhu.alert('消费证明', "您的卡号为"+username+"  您的卡片已激活、可正常使用，消费时请出示本页面已证明");
+   
+   
+   
+   $("#username").val("");
+   $("#phone").val("");
+   myflag="0";
+           return ;
+
+	 }else{
+
+	 	mizhu.alert('', '卡号或电话号输入有误','alert_green');
+	return ;
+	
+	}
+	 	
+	 	
+
+
+	  
+	}
+
+
+
+
+var mizhu = new function() {
+	this.width = $(window).width() * 0.8;
+	this.height = 172;
+
+	this.close = function() {
+		$('.win iframe').fadeOut();
+		$('.win').fadeOut("fast");
+		setTimeout(function() {
+			$('.win iframe').remove();
+			$('.win').remove();
+		}, 200);
+	};
+
+	this.open = function(width, height, title, url, closed) {
+		this._close = function() {
+			this.close();
+			if($.isFunction(closed)) closed();
+		};
+		var html = '<div class="win"><div class="mask-layer"></div><div class="window-panel"><iframe class="title-panel" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe><div class="title"><h3></h3></div><a href="javascript:void(0)" onclick="mizhu._close();" class="close-btn" title="关闭">×</a><iframe class="body-panel" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" src=""></iframe></div></div>';
+		var jq = $(html);
+		jq.find(".window-panel").height(mizhu.height).width(mizhu.width).css("margin-left", -mizhu.width / 2).css("margin-top", -mizhu.height);
+		jq.find(".title").find(":header").html(title);
+		jq.find(".body-panel").height(height - 36).attr("src", url);
+		jq.appendTo('body').fadeIn("fast");
+		$(".win .window-panel").focus();
+	};
+
+	function messageBox(html, title, message, type) {
+		var jq = $(html);
+		if(type == "toast") {
+			jq.find(".window-panel").width(message.length * 20).css("margin-left", -message.length * 20 / 2).css("margin-top", -mizhu.height / 2);
+		} else {
+			jq.find(".window-panel").width(mizhu.width).css("margin-left", -mizhu.width / 2).css("margin-top", -mizhu.height / 2 - 36);
+		}
+		if(valempty(title)) {
+			jq.find(".title").remove();
+			jq.find(".window-panel .body-panel").css("border-radius", "4px");
+		} else {
+			jq.find(".title").find(":header").html(title);
+		}
+		jq.find(".content").html(message.replace('\r\n', '<br/>'));
+		jq.appendTo('body').fadeIn("fast");
+		$(".win .w-btn:first").focus();
+	}
+
+	this.confirm = function(title, message, selected) {
+		this._close = function(flag) {
+			if(flag) {
+				$(".win").remove();
+				selected(flag);
+			} else {
+				this.close();
+			};
+		};
+
+		var html = '<div class="win"><div class="mask-layer"></div><div class="window-panel"><iframe class="title-panel" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe><div class="title"><h3></h3></div><div class="body-panel"><p class="content"></p><p class="btns"><button class="w-btn" tabindex="1" onclick="mizhu._close(false);">取消</button><button class="w-btn" onclick="mizhu._close(true);">确定</button></p></div></div></div>';
+		messageBox(html, title, message);
+	};
+
+	this.alert = function(title, message, ico) {
+		var icon = "";
+		if(!valempty(ico)) {
+			icon = '<p class="btns" style="margin-bottom:-15px;"><img width="70px" height="70px" src="images/' + ico + '.png"></p>';
+		}
+		var html = '<div class="win"><div class="mask-layer"></div><div class="window-panel"><iframe class="title-panel" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe><div class="title"><h3></h3></div><div class="body-panel">' + icon + '<p class="content"></p><p class="btns"><button class="w-btn" tabindex="1" onclick="mizhu.close();">确定</button></p></div></div></div>';
+		messageBox(html, title, message);
+	}
+
+	this.toast = function(message, time) {
+		var html = '<div class="win"><div class="window-panel"><iframe class="title-panel" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe><div class="body-panel toast-panel"><p class="content toast-content"></p></div></div></div>';
+		messageBox(html, "", message, "toast");
+		setTimeout(function() {
+			mizhu.close();
+		}, time || 3000);
+	}
+};
+
+function valempty(str) {
+	if(str == "null" || str == null || str == "" || str == "undefined" || str == undefined || str == 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+
+
+</script>
+</head>  
+<body>  
+	<div class="imglist">
+ <table id="newlang" width="100%" class="tab" style="border-collapse:separate; border-spacing:0px 10px;" align="center" cellspacing="1" cellpadding="5">
+                    <tr align="center">
+                      <td align="center"><span style="font-size: 1.4em; margin-left:4px; font-family:宋体">卡号</span><span style="color:red">*</span></td>
+                     <td align="center"><input type="text" name="user.username" class="input" id="username"></td>
+                    </tr> 
+                    
+        
+                    
+                    <tr align="center">
+                      <td align="center"><span style="font-size: 1.4em; margin-left:4px; font-family:宋体">电话</span><span style="color:red">*</span></td>
+                     <td align="center"><input type="text" name="user.phone" class="input" id="phone"></td>
+                    </tr> 
+                    <tr align="center">
+                    <td align="center"></td>
+                  
+                   <td align="center">
+                   
+                   <button class="btn" style="margin-left:40px;width:200px;height:45px" onclick="login()">卡片验证</button></td>
+                    </tr>
+                  </table> 
+</div>
+</body>  
+</html>
